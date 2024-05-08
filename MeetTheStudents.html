@@ -157,6 +157,79 @@ html,body,#app{margin:0;font-style:normal;-webkit-font-smoothing:antialiased;fon
   <div class="next" onclick="nextSlide()">❯</div>
 </div>
 
+
+    <style>
+        /* Styles for the card */
+        .card-container {
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-front {
+            background-color: #fff;
+        }
+
+        .card-back {
+            background-color: #f0f0f0;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<div class="card-container">
+    <!-- Card -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <!-- Front -->
+        <div class="card-face card-front">
+            <h3><blockquote>Mr.Strunk</blockquote></h3>
+            <p>Mr.Strunk is an amazing person and the teacher of the App Development Program</p>
+        </div>
+        <div class="card-face card-back">
+            <p><img src="images/images/IMG_2220.jpg" height="202" width="302"> </p>
+        </div>
+    </div>
+    <!-- End Card -->
+</div>
+<!-- End Card Container -->
+<div class="card-container">
+    <!-- Card -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <!-- Front -->
+        <div class="card-face card-front">
+            <h3><blockquote>Mr.Strunk</blockquote></h3>
+            <p>Mr.Strunk is an amazing person and the teacher of the App Development Program</p>
+        </div>
+        <div class="card-face card-back">
+            <p><img src="images/images/IMG_2220.jpg" height="202" width="302"> </p>
+        </div>
+        
+</body>
+</html>
+
 <script>
   let currentIndex = 0;
   const slides = document.querySelectorAll('.carousel-image');
