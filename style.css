@@ -1,4 +1,8 @@
 /* cyrillic-ext */
+.container {
+  width: 100%; /* Ensure the container takes full width */
+}
+
 @font-face {
     font-family: 'Inter';
     font-style: normal;
@@ -16,6 +20,49 @@
     src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format('woff2');
     unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
   }
+  .container {
+    display: flex;
+  }
+  
+  .card {
+    width: calc(25% - 20px); /* 25% width minus margins */
+    border: 1px solid #ccc;
+    margin: 100px;
+    perspective: 1000px;
+    float:right
+  }
+  
+  .card.right {
+    margin-left: 60px; /* Adjust the margin between the cards */
+  }
+  
+  .card .front,
+  .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    font-size: 20px;
+  }
+  
+  .card .front {
+    background-color: #ffffff;
+    transform: rotateY(0deg);
+  }
+  
+  .card .back {
+    background-color: #f0f0f0;
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .front {
+    transform: rotateY(-180deg);
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(0deg);
+  }
+  
   /* greek-ext */
   @font-face {
     font-family: 'Inter';
